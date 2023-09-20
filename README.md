@@ -60,7 +60,7 @@ And copy the [decrypt.js](decrypt.js) into your blog's `static` folder, so it wi
 
 ### Step 1: Wrap the text you want to encrypt with the tag `hugo-encryptor`
 
-~~**Notice: Some text are required before you actually start the encrypting part, with a tag `<!--more-->` placed in the middle of them.**~~
+**Notice: Some texts are required before you actually start the encrypting part, with a tag `<!--more-->` placed in the middle of them. Those characters will be parsed by hugo as excerpt, so excerpt won't leak your contents**
 
 Example:
 
@@ -68,6 +68,10 @@ Example:
 ---
 title: "An Encrypted Post"
 ---
+
+some text here.
+
+<!--more-->
 
 {{% hugo-encryptor "PASSWORD" %}}
 
