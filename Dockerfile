@@ -1,7 +1,6 @@
-FROM jfloff/alpine-python:latest-slim
-WORKDIR /blog
-ADD requirements.txt /
-ADD hugo-encryptor.py /
-RUN /entrypoint.sh -a libxslt -b libxslt-dev -b libxml2-dev -b g++ \
-    && rm -f /requirements.txt
-CMD ["python", "/hugo-encryptor.py"]
+FROM python:3.7
+WORKDIR /
+COPY requirements.txt /
+RUN pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+COPY hugo-encryptor.py /
+CMD ["python", "hugo-encryptor.py"]
