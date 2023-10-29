@@ -11,7 +11,7 @@
 Using Docker, you should mount the `public` directory into the container. However, you still have to copy the shortcode snippet and decrypt.js into your blog directory (see below).
 
 ```bash
-sudo docker run -v ./public:/public -it --rm sievelau/hugo_encryptor:1.0
+sudo docker run -v ./public:/public -it --rm sievelau/hugo_encryptor
 ```
 
 If not using Docker, follow these steps. Environmental dependence: Python3
